@@ -1,0 +1,65 @@
+{
+  "thread_id": "demo",
+  "pregunta": "¿Y cómo estuvo eso comparado con el mes anterior?",
+  "eventos": [
+    {
+      "paso": 1,
+      "nodo": "agent",
+      "tipo": "accion",
+      "contenido": "consultar_ventas({'producto': 'Helado Familiar', 'region': 'NOA', 'mes': '2026-02'})",
+      "detalle": {
+        "herramienta": "consultar_ventas",
+        "argumentos": {
+          "producto": "Helado Familiar",
+          "region": "NOA",
+          "mes": "2026-02"
+        }
+      },
+      "timestamp": "2026-10-03T18:55:39+00:00"
+    },
+    {
+      "paso": 2,
+      "nodo": "tools",
+      "tipo": "observacion",
+      "contenido": "{\"producto\": \"Helado Familiar\", \"mes\": \"2026-02\", \"region\": \"NOA\", \"unidades\": 8000, \"monto_ars\": 4800000.0}",
+      "detalle": {
+        "herramienta": "consultar_ventas",
+        "es_error": false
+      },
+      "timestamp": "2026-10-03T18:55:39+00:00"
+    },
+    {
+      "paso": 3,
+      "nodo": "agent",
+      "tipo": "accion",
+      "contenido": "calcular_variacion({'valor_actual': 5200, 'valor_anterior': 8000})",
+      "detalle": {
+        "herramienta": "calcular_variacion",
+        "argumentos": {
+          "valor_actual": 5200,
+          "valor_anterior": 8000
+        }
+      },
+      "timestamp": "2026-10-03T18:55:42+00:00"
+    },
+    {
+      "paso": 4,
+      "nodo": "tools",
+      "tipo": "observacion",
+      "contenido": "{\"diferencia\": -2800.0, \"variacion_pct\": -35.0}",
+      "detalle": {
+        "herramienta": "calcular_variacion",
+        "es_error": false
+      },
+      "timestamp": "2026-10-03T18:55:42+00:00"
+    },
+    {
+      "paso": 5,
+      "nodo": "agent",
+      "tipo": "respuesta_final",
+      "contenido": "En 2026-02, vendimos 8000 unidades de Helado Familiar en la región NOA. Esto representa una disminución de 2800 unidades (-35%) con respecto a 2026-03.",
+      "detalle": {},
+      "timestamp": "2026-10-03T18:55:46+00:00"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "thread_id": "demo",
+  "pregunta": "¿Qué producto te acabo de consultar y en qué región?",
+  "eventos": [
+    {
+      "paso": 1,
+      "nodo": "agent",
+      "tipo": "respuesta_final",
+      "contenido": "Me consultaste sobre \"Helado Familiar\" en la región \"NOA\".",
+      "detalle": {},
+      "timestamp": "2026-10-03T18:55:59+00:00"
+    }
+  ]
+}

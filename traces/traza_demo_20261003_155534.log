@@ -1,0 +1,8 @@
+THREAD: demo
+PREGUNTA: ¿Cuántas unidades vendimos de helado en la región NOA en 2026-03?
+
+[01] ACTUAR    (agent) listar_catalogo({})
+[02] OBSERVAR  (tools) {"productos": ["Alfajor Triple", "Galletitas Dulces", "Helado Familiar"], "regiones": ["Centro", "NOA"], "meses": ["2026-01", "2026-02", "2026-03"]}
+[03] ACTUAR    (agent) consultar_ventas({'mes': '2026-03', 'producto': 'Helado Familiar', 'region': 'NOA'})
+[04] OBSERVAR  (tools) {"producto": "Helado Familiar", "mes": "2026-03", "region": "NOA", "unidades": 5200, "monto_ars": 3120000.0}
+[05] RESPUESTA (agent) Vendimos 5200 unidades de Helado Familiar en la región NOA en 2026-03.

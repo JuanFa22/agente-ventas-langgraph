@@ -1,0 +1,8 @@
+THREAD: demo
+PREGUNTA: ¿Y cómo estuvo eso comparado con el mes anterior?
+
+[01] ACTUAR    (agent) consultar_ventas({'producto': 'Helado Familiar', 'region': 'NOA', 'mes': '2026-02'})
+[02] OBSERVAR  (tools) {"producto": "Helado Familiar", "mes": "2026-02", "region": "NOA", "unidades": 8000, "monto_ars": 4800000.0}
+[03] ACTUAR    (agent) calcular_variacion({'valor_actual': 5200, 'valor_anterior': 8000})
+[04] OBSERVAR  (tools) {"diferencia": -2800.0, "variacion_pct": -35.0}
+[05] RESPUESTA (agent) En 2026-02, vendimos 8000 unidades de Helado Familiar en la región NOA. Esto representa una disminución de 2800 unidades (-35%) con respecto a 2026-03.

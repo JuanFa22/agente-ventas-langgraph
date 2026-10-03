@@ -1,0 +1,62 @@
+{
+  "thread_id": "demo",
+  "pregunta": "¿Cuántas unidades vendimos de helado en la región NOA en 2026-03?",
+  "eventos": [
+    {
+      "paso": 1,
+      "nodo": "agent",
+      "tipo": "accion",
+      "contenido": "listar_catalogo({})",
+      "detalle": {
+        "herramienta": "listar_catalogo",
+        "argumentos": {}
+      },
+      "timestamp": "2026-10-03T18:55:16+00:00"
+    },
+    {
+      "paso": 2,
+      "nodo": "tools",
+      "tipo": "observacion",
+      "contenido": "{\"productos\": [\"Alfajor Triple\", \"Galletitas Dulces\", \"Helado Familiar\"], \"regiones\": [\"Centro\", \"NOA\"], \"meses\": [\"2026-01\", \"2026-02\", \"2026-03\"]}",
+      "detalle": {
+        "herramienta": "listar_catalogo",
+        "es_error": false
+      },
+      "timestamp": "2026-10-03T18:55:16+00:00"
+    },
+    {
+      "paso": 3,
+      "nodo": "agent",
+      "tipo": "accion",
+      "contenido": "consultar_ventas({'mes': '2026-03', 'producto': 'Helado Familiar', 'region': 'NOA'})",
+      "detalle": {
+        "herramienta": "consultar_ventas",
+        "argumentos": {
+          "mes": "2026-03",
+          "producto": "Helado Familiar",
+          "region": "NOA"
+        }
+      },
+      "timestamp": "2026-10-03T18:55:33+00:00"
+    },
+    {
+      "paso": 4,
+      "nodo": "tools",
+      "tipo": "observacion",
+      "contenido": "{\"producto\": \"Helado Familiar\", \"mes\": \"2026-03\", \"region\": \"NOA\", \"unidades\": 5200, \"monto_ars\": 3120000.0}",
+      "detalle": {
+        "herramienta": "consultar_ventas",
+        "es_error": false
+      },
+      "timestamp": "2026-10-03T18:55:33+00:00"
+    },
+    {
+      "paso": 5,
+      "nodo": "agent",
+      "tipo": "respuesta_final",
+      "contenido": "Vendimos 5200 unidades de Helado Familiar en la región NOA en 2026-03.",
+      "detalle": {},
+      "timestamp": "2026-10-03T18:55:34+00:00"
+    }
+  ]
+}
